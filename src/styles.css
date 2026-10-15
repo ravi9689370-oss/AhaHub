@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles for better visual hierarchy */
+@layer base {
+  body {
+    @apply antialiased text-base bg-gray-50;
+    margin-bottom: 80px; /* Reserve space for bottom nav */
+  }
+  * {
+    @apply box-border;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-surface rounded-2xl shadow-neo hover:shadow-neo-lg transition-all duration-200;
+  }
+  .btn-primary {
+    @apply px-6 py-3 bg-primary text-white font-medium rounded-full hover:bg-secondary hover:scale-105 transition-all shadow-neo;
+  }
+  .btn-secondary {
+    @apply px-6 py-3 bg-gray-200 text-gray-900 font-medium rounded-full hover:bg-gray-300 transition-all;
+  }
+  .input-field {
+    @apply w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20;
+  }
+}
+
+/* Custom animations */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Game canvas styling */
+#game-canvas {
+  @apply w-full h-full object-contain rounded-lg;
+}
+
+/* Tab content transition */
+.tab-content {
+  @apply animate-fadeIn;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

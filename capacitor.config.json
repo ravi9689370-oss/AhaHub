@@ -1,0 +1,34 @@
+{
+  "appId": "com.ahahub.app",
+  "appName": "AhaHub",
+  "appVersion": "1.0.0",
+  "bundledWebRuntime": false,
+  "description": "Multi-App & Game Hub",
+  "npmClient": "npm",
+  "scripts": {
+    "build": "npm run build",
+    "dev": "npm run dev"
+  },
+  "android": {
+    "allowMixedCaseAndroidIconNames": true,
+    "hexIcon": false,
+    "launchMode": "singleInstance"
+  },
+  "ios": {
+    "scrollEdge": false
+  },
+  "web": {
+    "port": 3000,
+    "config": {
+      "baseUrl": "/"
+    }
+  },
+  "plugins": {
+    "SplashScreen": {
+      "androidScaleType": "CENTER_CROP",
+      "launchShowDuration": 3000,
+      "background": "#FF6B00",
+      "showSpinner": false
+    }
+  }
+}
